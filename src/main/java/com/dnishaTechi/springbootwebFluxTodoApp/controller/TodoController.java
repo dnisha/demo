@@ -11,6 +11,7 @@ import reactor.core.publisher.Mono;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/v1/todo")
 public class TodoController {
     @Autowired
