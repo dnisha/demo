@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: spring-boot-todo-app
+
+  labels:
+
+    app: nginx
+
+spec:
+
+  replicas: 2
+
+  selector:
+
+    matchLabels:
+
+      app: spring-boot-todo-app-k8s
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: spring-boot-todo-app-k8s
+
+    spec:
+
+      containers:
+
+        - name: springboot-todoapp-k8s
+
+          image: dash04/todo
+
+          imagePullPolicy: IfNotPresent
+
+          ports:
+
+            - containerPort: 8080
