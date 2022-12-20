@@ -1,5 +1,5 @@
 spring:
   r2dbc:
-    url: r2dbc:postgresql://localhost:5432/postgres?currentSchema=todoapp
-    username: postgres
-    password: mysecretpassword
+    url: r2dbc:postgresql://${DB_HOST}:5432/postgres?currentSchema=${DB_NAME}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
