@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - name: springboot-postgres-k8s
-          image: dash04/todo:v11
+          image: dash04/todo:v17
           ports:
             - containerPort: 8080
           env:   # Setting Enviornmental Variables
