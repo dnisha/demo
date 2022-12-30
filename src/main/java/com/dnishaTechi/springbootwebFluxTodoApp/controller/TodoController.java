@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono;
 import java.util.UUID;
 
 @RestController
-c@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 @RequestMapping("/v1/todo")
 public class TodoController {
     @Autowired
