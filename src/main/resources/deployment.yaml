@@ -1,9 +1,9 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: springboot-postgres-k8s
+  name: backend
   labels:
-    name: springboot-postgres-k8s
+    name: backend
 spec:
   ports:
     - nodePort: 30163
@@ -11,26 +11,26 @@ spec:
       targetPort: 8080
       protocol: TCP
   selector:
-    app: springboot-postgres-k8s
+    app: backend
   type: NodePort
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-postgres-k8s
+  name: backend
 spec:
   selector:
     matchLabels:
-      app: springboot-postgres-k8s
+      app: backend
   replicas: 1
   template:
     metadata:
       labels:
-        app: springboot-postgres-k8s
+        app: backend
     spec:
       containers:
-        - name: springboot-postgres-k8s
+        - name: backend
           image: dash04/todo:v17
           ports:
             - containerPort: 8080
